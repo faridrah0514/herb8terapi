@@ -29,7 +29,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'faridsoftwareengineer.online',
     'localhost',
-    '127.0.0.1'
+    '127.0.0.1',
+    'faridsoftwareengineer.online.zidni.id'
 ]
 
 
@@ -131,7 +132,7 @@ STATICFILES_DIRS = [
 ]
 
 # print(os.path.join(BASE_DIR, 'static'))
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, '../public')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
