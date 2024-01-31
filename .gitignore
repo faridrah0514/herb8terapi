@@ -1,2 +1,8 @@
 __pycache__/
 public/
+
+stderr.log
+herb8terapi/db.sqlite3
+
+.htaccess
+tmp/
