@@ -1,0 +1,172 @@
+{% load static %}
+<form id="registration_form" action="{% url 'registration' %}" style="box-shadow: 0 0 20px rgba(214, 215, 216, 0.5); padding: 30px;" method="post">
+  {% csrf_token %}
+  <!-- Nama Lengkap -->
+  <div class="row mb-3">
+    <div class="col form-group">
+      <div class="row">
+        <label for="{{ form.full_name.id_for_label }}" class="col-sm-2 col-form-label">
+          Nama Lengkap
+        </label>
+        <div class="col">
+          {{ form.full_name }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Jenis kelamin dan status -->
+  <div class="row mb-3">
+    <div class="col form-group">
+      <div class="row">
+        <label for="{{ form.gender.id_for_label }}" class="col-sm-2 col-form-label">
+          Jenis Kelamin
+        </label>
+        <div class="col-sm-4">
+          {{ form.gender }}
+        </div>
+        <label for="{{ form.marital_status.id_for_label }}" class="col-sm-2 col-form-label">
+          Status Perkawinan
+        </label>
+        <div class="col-sm-4">
+          {{ form.marital_status }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Tempat dan Tanggal Lahir -->
+  <div class="row mb-3">
+    <div class="col form-group">
+      <div class="row">
+        <label for="{{ form.birth_place.id_for_label }}" class="col-sm-2 col-form-label"> Tempat </label>
+        <div class="col-sm-4">
+          <div class="col">
+            {{ form.birth_place }}
+          </div>
+        </div>
+        <label for="{{ form.birth_date.id_for_label }}" class="col-sm-2 col-form-label">
+          Tanggal Lahir
+        </label>
+        <div class="col-sm-4">
+          {{ form.birth_date }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Agama dan pekerjaan -->
+  <div class="row mb-3">
+    <div class="col form-group">
+      <div class="row">
+        <label for="{{ form.religion.id_for_label }}" class="col-sm-2 col-form-label">
+          Agama
+        </label>
+        <div class="col-sm-4">
+          {{ form.religion }}
+        </div>
+        <label for="{{ form.occupation.id_for_label }}" class="col-sm-2 col-form-label">
+          Pekerjaan
+        </label>
+        <div class="col">
+          {{ form.occupation }}
+          </div>
+      </div>
+    </div>
+  </div>
+  <!-- Alamat Rumah -->
+  <div class="row mb-3">
+    <div class="col form-group">
+      <div class="row">
+        <label for="{{ form.address.id_for_label }}" class="col-sm-2 col-form-label">
+          Alamat Rumah
+        </label>
+        <div class="col">
+          {{ form.address }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- No Tlp -->
+  <div class="row mb-3">
+    <div class="col form-group">
+      <div class="row">
+        <label for="{{ form.phone_number.id_for_label }}" class="col-sm-2 col-form-label">
+          No. Tlp
+        </label>
+        <div class="col">
+          {{ form.phone_number }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Email -->
+  <div class="row mb-3">
+    <div class="col form-group">
+      <div class="row">
+        <label for="{{ form.email.id_for_label }}" class="col-sm-2 col-form-label">
+          Email
+        </label>
+        <div class="col">
+          {{ form.email }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Diagnosa Dokter -->
+  <div class="row mb-3">
+    <div class="col form-group">
+      <div class="row">
+        <label for="{{ form.diagnose.id_for_label }}" class="col-sm-2 col-form-label">
+          Diagnosa Dokter
+        </label>
+        <div class="col">
+          {{ form.diagnose }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Pernah operasi dan informasi tau herb8 -->
+  <div class="row mb-3">
+    <div class="col form-group">
+      <div class="row">
+        <label for="{{ form.had_surgery.id_for_label }}" class="col-sm-2 col-form-label">
+          Pernah Operasi?
+        </label>
+        <div class="col-sm-4">
+          {{ form.had_surgery }}
+        </div>
+        <label for="{{ form.herb8_info.id_for_label }}" class="col-sm-2 col-form-label">
+          Tahu herb8 melalui?
+        </label>
+        <div class="col-sm-4">
+          {{ form.herb8_info }}
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row mt-3">
+    <div class="container section-title pt-3" style="border-top: 4px solid #46bc99">
+        <p>
+            Saya mengajukan pemeriksaan / konsultasi di Klinik Herb8 dan saya bersedia mengikuti aturan yang berlaku di Klinik Herb8 sesuai Undang Undang Kesehatan Tradisional. Semoga Tuhan memberikan kesembuhan untuk kami/keluarga, Aamiin.
+        </p>
+    </div>
+  </div>
+  <div class="text-center">
+    <button type="submit" class="appointment-btn" style="border: 0; border-radius: 50px;">Buat Janji</button>
+  </div>
+</form>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      var form = document.getElementById("registration_form");
+  
+      form.addEventListener("submit", function() {
+          // Clear form fields
+          var formElements = form.elements;
+          for (var i = 0; i < formElements.length; i++) {
+              var element = formElements[i];
+              if (element.type !== "button" && element.type !== "submit" && element.type !== "reset" && element.type !== "hidden" && element.type !== "checkbox" && element.type !== "radio") {
+                  element.value = '';
+              }
+          }
+      });
+  });
+  </script>
