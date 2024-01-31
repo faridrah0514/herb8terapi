@@ -30,7 +30,8 @@ ALLOWED_HOSTS = [
     'faridsoftwareengineer.online',
     'localhost',
     '127.0.0.1',
-    'faridsoftwareengineer.online.zidni.id'
+    'faridsoftwareengineer.online.zidni.id',
+    'herb8terapi.com'
 ]
 
 
