@@ -78,7 +78,7 @@
           <p class="form-control" style="border: 0px">Nama Lengkap</p>
         </div>
         <div class="col">
-          <p class="form-control" style="border: 0px"><Strong>Farid Rahman</Strong></p>
+          <p class="form-control" style="border: 0px"><Strong>{{ data.full_name }}</Strong></p>
         </div>
       </div>
       <div class="row">
@@ -86,13 +86,13 @@
           <p class="form-control" style="border: 0px">Jenis Kelamin</p>
         </div>
         <div class="col-sm-2">
-          <p class="form-control" style="border: 0px"><Strong>Laki-laki</Strong></p>
+          <p class="form-control" style="border: 0px"><Strong>{{ data.gender }}</Strong></p>
         </div>
         <div class="col-sm-2">
           <p class="form-control" style="border: 0px">Status Perkawinan</p>
         </div>
         <div class="col-sm">
-          <p class="form-control" style="border: 0px"><Strong>Menikah</Strong></p>
+          <p class="form-control" style="border: 0px"><Strong>{{ data.marital_status }}</Strong></p>
         </div>
       </div>
       <div class="row">
@@ -100,13 +100,13 @@
           <p class="form-control" style="border: 0px">Tempat Lahir</p>
         </div>
         <div class="col-sm-2">
-          <p class="form-control" style="border: 0px"><Strong>Jakarta</Strong></p>
+          <p class="form-control" style="border: 0px"><Strong>{{ data.birth_place }}</Strong></p>
         </div>
         <div class="col-sm-2">
           <p class="form-control" style="border: 0px">Tanggal Lahir</p>
         </div>
         <div class="col-sm">
-          <p class="form-control" style="border: 0px"><Strong>14/05/1990</Strong></p>
+          <p class="form-control" style="border: 0px"><Strong>{{ data.birth_date|date:'d-m-Y' }}</Strong></p>
         </div>
       </div>
       <div class="row">
@@ -114,13 +114,13 @@
           <p class="form-control" style="border: 0px">Agama</p>
         </div>
         <div class="col-sm-2">
-          <p class="form-control" style="border: 0px"><Strong>Islam</Strong></p>
+          <p class="form-control" style="border: 0px"><Strong>{{ data.religion }}</Strong></p>
         </div>
         <div class="col-sm-2">
           <p class="form-control" style="border: 0px">Pekerjaan</p>
         </div>
         <div class="col-sm">
-          <p class="form-control" style="border: 0px"><Strong>Karyawan Swasta</Strong></p>
+          <p class="form-control" style="border: 0px"><Strong>{{ data.occupation }}</Strong></p>
         </div>
       </div>
       <div class="row">
@@ -128,8 +128,7 @@
           <p class="form-control" style="border: 0px">Alamat</p>
         </div>
         <div class="col-sm-4">
-          <p class="form-control" style="border: 0px"><Strong>Puri Beta 2, Cluster Taman Buah, Jl. Taman Buah 2 No.52,
-            Larangan Utara, Larangan, Tangerang, Banten asdasdasdasdasdasd</Strong></p>
+          <p class="form-control" style="border: 0px"><Strong>{{ data.address }}</Strong></p>
         </div>
       </div>
       <div class="row">
@@ -137,13 +136,13 @@
           <p class="form-control" style="border: 0px">No Tlp</p>
         </div>
         <div class="col-sm-2">
-          <p class="form-control" style="border: 0px"><Strong>081299266009</Strong></p>
+          <p class="form-control" style="border: 0px"><Strong>{{ data.phone_number }}</Strong></p>
         </div>
         <div class="col-sm-2">
           <p class="form-control" style="border: 0px">E-mail</p>
         </div>
         <div class="col-sm">
-          <p class="form-control" style="border: 0px"><Strong>fr.farid.rahman@gmail.com</Strong></p>
+          <p class="form-control" style="border: 0px"><Strong>{{ data.email }}</Strong></p>
         </div>
       </div>
       <div class="row">
@@ -151,7 +150,7 @@
           <p class="form-control" style="border: 0px">Diagnosa dokter</p>
         </div>
         <div class="col-sm">
-          <p class="form-control" style="border: 0px"><Strong>Terlalu ganteng</Strong></p>
+          <p class="form-control" style="border: 0px"><Strong>{{ data.diagnose }}</Strong></p>
         </div>
       </div>
       <div class="row">
@@ -159,13 +158,13 @@
           <p class="form-control" style="border: 0px">Pernah Operasi?</p>
         </div>
         <div class="col-sm-2">
-          <p class="form-control" style="border: 0px"><Strong>Tidak</Strong></p>
+          <p class="form-control" style="border: 0px"><Strong>{% if data.had_surgery %}Ya{% else %}Tidak{% endif %}</Strong></p>
         </div>
         <div class="col-sm-2">
           <p class="form-control" style="border: 0px">Tahu Herb8 dari?</p>
         </div>
         <div class="col-sm">
-          <p class="form-control" style="border: 0px"><Strong>Instagram</Strong></p>
+          <p class="form-control" style="border: 0px"><Strong>{{ data.herb8_info }}</Strong></p>
         </div>
       </div>
     </div>
@@ -177,7 +176,7 @@
     <div class="container" style="background-color: white; border-radius: 25px; box-shadow: 0 0 20px rgba(214, 215, 216, 0.5); padding: 10px">
       <div class="text-center">
         <!-- <button type="submit" class="appointment-btn" style="border: 0; border-radius: 50px;"> -->
-          <a href="{% url 'download_pdf'%}" target="_blank">Buat Janji</a>
+          <a href="#" target="_blank">Buat Janji</a>
         <!-- </button> -->
       </div>
     </div>
