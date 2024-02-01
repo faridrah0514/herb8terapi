@@ -1,4 +1,5 @@
 from django.db import models
+import secrets
 
 class Registration(models.Model):
     GENDER_CHOICES = [
@@ -41,6 +42,9 @@ class Registration(models.Model):
     diagnose = models.CharField(max_length=100, blank=True, null=True)
     had_surgery = models.BooleanField(blank=True, null=True, choices = [(True, 'Ya'), (False, 'Tidak')])
     herb8_info = models.IntegerField(choices=HERB8_INFO_CHOICES, blank=True, null=True)
+    rand_id = models.CharField(max_length=16, default=secrets.token_hex(8))
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.full_name

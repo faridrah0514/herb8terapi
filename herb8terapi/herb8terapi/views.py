@@ -12,14 +12,13 @@ def registration(request):
     if request.method == 'POST':
         # print("iya ini")
         form = RegistrationForm(request.POST)
-        print("raw data -> ", form.data)
-        print("bbb")
         if form.is_valid():
             existing_record = Registration.objects.filter(
                 # full_name=form.cleaned_data['full_name'],
                 phone_number=form.cleaned_data['phone_number']
             ).exists()
             if not existing_record:
+                print("save data to database")
                 form.save()
                 form = RegistrationForm()
                 HttpResponse("thank you")
