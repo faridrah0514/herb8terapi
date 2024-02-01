@@ -154,19 +154,3 @@
     <button type="submit" class="appointment-btn" style="border: 0; border-radius: 50px;">Buat Janji</button>
   </div>
 </form>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-      var form = document.getElementById("registration_form");
-  
-      form.addEventListener("submit", function() {
-          // Clear form fields
-          var formElements = form.elements;
-          for (var i = 0; i < formElements.length; i++) {
-              var element = formElements[i];
-              if (element.type !== "button" && element.type !== "submit" && element.type !== "reset" && element.type !== "hidden" && element.type !== "checkbox" && element.type !== "radio") {
-                  element.value = '';
-              }
-          }
-      });
-  });
-  </script>

@@ -25,9 +25,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('registrasi/', views.registration, name = 'registration'),
-    path('registrasi_clone/', views.registration_clone, name = 'registration_clone'),
-    path('registrasi_clone_2/', views.registration_clone_2, name = 'registration_clone_2'),
-    path('download_pdf/', views.download_pdf, name='download_pdf'),
+    # path('registrasi_clone/', views.registration_clone, name = 'registration_clone'),
+    # path('registrasi_clone_2/', views.registration_clone_2, name = 'registration_clone_2'),
+    # path('download_pdf/', views.download_pdf, name='download_pdf'),
 ]
 
 if settings.DEBUG:
