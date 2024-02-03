@@ -1,8 +1,8 @@
 __pycache__/
 public/
-
+*.ipynb
 stderr.log
 herb8terapi/db.sqlite3
-
+herb8terapi/static/pdf/dest/*.pdf
 .htaccess
 tmp/

@@ -176,7 +176,7 @@
     <div class="container" style="background-color: white; border-radius: 25px; box-shadow: 0 0 20px rgba(214, 215, 216, 0.5); padding: 10px">
       <div class="text-center">
         <!-- <button type="submit" class="appointment-btn" style="border: 0; border-radius: 50px;"> -->
-          <a href="#" target="_blank">Buat Janji</a>
+          <a href="{% static 'pdf/dest/' %}{{ data.rand_id }}.pdf" target="_blank">Print PDF</a>
         <!-- </button> -->
       </div>
     </div>
