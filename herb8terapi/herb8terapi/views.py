@@ -25,7 +25,7 @@ Email: {values['email']},
 Diagnosa dokter: {values['diagnose']},
 Pernah Operasi: {'Ya' if values['had_surgery'] else 'Tidak'},
 Tau Herb8 dari: {values['herb8_info']},
-PDF Link: https://herb8terapi.com/{values['rand_id']}
+PDF Link: https://herb8terapi.com/pdf/{values['rand_id']}
 """
 
     # Encode the formatted text for a URL
