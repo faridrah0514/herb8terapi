@@ -134,11 +134,11 @@ def generate_pdf(rand_id):
 
     canvas_obj.drawString(229, 506, f"{data.occupation}") # Pekerjaan
     canvas_obj.drawString(229, 478, "Jl. Taman Buah 2 No.52, Larangan Utara") # Alamat
-    canvas_obj.drawString(229, 449, "Larangan, Tangeran, Banten") # Alamat Line-2
+    # canvas_obj.drawString(229, 449, "Larangan, Tangeran, Banten") # Alamat Line-2
     canvas_obj.drawString(229, 422, f"{data.phone_number}") # No Telepon
     canvas_obj.drawString(229, 393, f"{data.email}") # Email
     canvas_obj.drawString(229, 365, f"{data.diagnose}") #Diagnosa Dokter
-    canvas_obj.drawString(229, 335, "Terlalu ganteng") #Diagnosa Dokter Line-2
+    # canvas_obj.drawString(229, 335, "Terlalu ganteng") #Diagnosa Dokter Line-2
     # Apakah Pernah Operasi?
     canvas_obj.drawString(232 if data.had_surgery else 293, 308, "V") # Ya
     # canvas_obj.drawString(293, 308, "X") # Tidak
