@@ -43,10 +43,10 @@ def registration(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
-            existing_record = Registration.objects.filter(
-                phone_number=form.cleaned_data['phone_number']
-            ).exists()
-            if not existing_record:
+            # existing_record = Registration.objects.filter(
+            #     phone_number=form.cleaned_data['phone_number']
+            # ).exists()
+            if True:
                 form.cleaned_data['rand_id'] = secrets.token_hex(8)
                 Registration(**form.cleaned_data).save()
                 generate_pdf(form.cleaned_data['rand_id'])
@@ -133,7 +133,7 @@ def generate_pdf(rand_id):
     # canvas_obj.drawString(506, 535, "f") # Lainnya
 
     canvas_obj.drawString(229, 506, f"{data.occupation}") # Pekerjaan
-    canvas_obj.drawString(229, 478, "Jl. Taman Buah 2 No.52, Larangan Utara") # Alamat
+    canvas_obj.drawString(229, 478, f"{data.address}") # Alamat
     # canvas_obj.drawString(229, 449, "Larangan, Tangeran, Banten") # Alamat Line-2
     canvas_obj.drawString(229, 422, f"{data.phone_number}") # No Telepon
     canvas_obj.drawString(229, 393, f"{data.email}") # Email
