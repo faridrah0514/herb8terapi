@@ -25,10 +25,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('registrasi/', views.registration, name = 'registration'),
-    # path('<str:rand_id>/', views.patient_info, name = 'patient_info'),
     path('pdf/<str:rand_id>/', views.open_pdf, name = 'open_pdf'),
-    path('coba/<str:rand_id>', views.test, name = 'test'),
-    # path('pdf/<str:rand_id>/', views.open_pdf, name = 'pdf')
+    path('data/registrasi', views.data_registration, name = 'data_registration'), 
 ]
 
 if settings.DEBUG:

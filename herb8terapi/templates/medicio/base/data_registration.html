@@ -1,0 +1,40 @@
+{% load static %}
+<div class="container" style="box-shadow: 0 0 20px rgba(214, 215, 216, 0.5); padding: 20px;">
+    <form>
+        <table id="datatable" class="display" style="width:100%"
+          data-pagination="true"
+          data-toggle="table"    
+          data-search="true"
+          data-select-item-name="phone_number"
+          data-toolbar=".btn-primary"
+          data-click-to-select="true"
+        >
+          <thead>
+              <tr>
+                  {% for item in column_name %}
+                      <th data-sortable="true">{{ item }}</th>
+                  {% endfor %}
+              </tr>
+          </thead>
+          <tbody>
+              {% for each in data %}
+              <tr>
+                  <td>{{ each.full_name }}</td>
+                  <td data-field="phone_number">{{ each.phone_number }}</td>
+                  <td>{{ each.address }}</td>
+                  <td>{{ each.gender }}</td>
+                  <td>{{ each.religion }}</td>
+                  <td>{{ each.marital_status }}</td>
+                  <td>{{ each.birth_place }} / {{ each.birth_date }}</td>
+                  <td>{{ each.occupation }}</td>
+                  <td>{{ each.email }}</td>
+                  <td>{{ each.diagnose }}</td>
+                  <td>{{ each.had_surgery }}</td>
+                  <td>{{ each.herb8_info }}</td>
+              </tr> 
+              {% endfor %}
+          </tbody>
+          </tfoot>
+      </table>
+    </form>
+</div>

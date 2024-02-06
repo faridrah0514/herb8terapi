@@ -55,17 +55,7 @@ def registration(request):
                 form.add_error(None, 'A record with the same name and phone number already exists.')  
     else:
         form = RegistrationForm()
-    return render(request, 'medicio/inner-page.html', {'form': form})
-
-def patient_info(request, rand_id):
-    print("rand_id: ", rand_id)
-    record = Registration.objects.get(
-        rand_id=rand_id
-    )
-    if not record:
-        return HttpResponse("NO RECORD")
-    else:
-        return render(request, 'medicio/base/patient_info.html', {'data': record})
+    return render(request, 'medicio/inner-page.html', {'form': form, 'title': 'Registrasi'})
 
 def open_pdf(request, rand_id):
     # pdf_file = open(f'{settings.BASE_DIR}/static/pdf/dest/{rand_id}.pdf')
@@ -74,11 +64,6 @@ def open_pdf(request, rand_id):
         response = HttpResponse(pdf_file.read(), content_type='application/pdf')
         response['Content-Disposition'] = f'inline; filename="{rand_id}.pdf"'
         return response
-
-def test(request,rand_id):
-    print("rand_id: ", rand_id)
-    print(Registration.objects.get(rand_id=rand_id).full_name)
-    return HttpResponse("ini")
 
 def generate_pdf(rand_id):
     # get patient record
@@ -119,18 +104,12 @@ def generate_pdf(rand_id):
     if data.marital_status == "Menikah":
         canvas_obj.drawString(232, 590, "V") # Menikah
     else:
-        canvas_obj.drawString(349, 590, "X") # Belum Menikah
+        canvas_obj.drawString(349, 590, "V") # Belum Menikah
     # Tempat Tanggal Lahir
     canvas_obj.drawString(229, 562, f"{data.birth_place}, {data.birth_date}") 
     # Agama
     if data.religion:
         canvas_obj.drawString(religion_coordinate[data.religion], 535, "v") 
-    # canvas_obj.drawString(231, 535, "a") # Islam
-    # canvas_obj.drawString(281, 535, "b") # Kristen
-    # canvas_obj.drawString(341, 535, "c") # Katolik
-    # canvas_obj.drawString(396, 535, "d") # Hindu
-    # canvas_obj.drawString(448, 535, "e") # Buddha
-    # canvas_obj.drawString(506, 535, "f") # Lainnya
 
     canvas_obj.drawString(229, 506, f"{data.occupation}") # Pekerjaan
     canvas_obj.drawString(229, 478, f"{data.address}") # Alamat
@@ -138,23 +117,14 @@ def generate_pdf(rand_id):
     canvas_obj.drawString(229, 422, f"{data.phone_number}") # No Telepon
     canvas_obj.drawString(229, 393, f"{data.email}") # Email
     canvas_obj.drawString(229, 365, f"{data.diagnose}") #Diagnosa Dokter
-    # canvas_obj.drawString(229, 335, "Terlalu ganteng") #Diagnosa Dokter Line-2
+   
     # Apakah Pernah Operasi?
     canvas_obj.drawString(232 if data.had_surgery else 293, 308, "V") # Ya
-    # canvas_obj.drawString(293, 308, "X") # Tidak
+  
     # Info herb8
-
-
     if data.herb8_info:
          c = info_herb8_coordinate[data.herb8_info]
          canvas_obj.drawString(c[0], c[1], "v") 
-    # canvas_obj.drawString(231, 277, "v") # Keluarga / Teman
-    # canvas_obj.drawString(343, 277, "v") # Facebook
-    # canvas_obj.drawString(443, 277, "v") # Instagram
-
-    # canvas_obj.drawString(231, 259, "v") # Brosur / Koran
-    # canvas_obj.drawString(343, 259, "v") # Spanduk / Baliho
-    # canvas_obj.drawString(443, 259, "v") # Lainnya
 
     canvas_obj.save()
     packet.seek(0)
@@ -162,3 +132,13 @@ def generate_pdf(rand_id):
     page.merge_page(overlay.pages[0])
     pdf_writer.add_page(page)
     pdf_writer.write(f'{settings.BASE_DIR}/static/pdf/dest/{rand_id}.pdf')
+
+def data_registration(request):
+    data = Registration.objects.all()
+    column_name = [field.name for field in Registration._meta.get_fields()]
+    # print(data)
+    print(column_name)
+    column_name = ['Nama Lengkap', 'No. Tlp', 'Alamat', 'Gender', 'Agama', 'Status Pernikahan', 'Tempat/Tanggal Lahir', 'Pekerjaan',
+                   'Email', 'Diagnosa', 'Pernah Operasi?', 'Info Herb8 Dari ?' 
+                   ]
+    return render(request, 'medicio/inner-page.html', {'data': data, 'column_name': column_name, 'title': 'Database'})
