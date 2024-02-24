@@ -10,8 +10,8 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Open Sans", sans-serif;
-  color: #444444;
+  font-family: "PT Sans", sans-serif;
+  color: #000000;
 }
 
 a {
@@ -31,6 +31,8 @@ h4,
 h5,
 h6 {
   font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 /*--------------------------------------------------------------
@@ -605,7 +607,10 @@ section {
 }
 
 .section-bg {
-  background-color: #f7fcfc;
+  /* background-color: #b5efef;
+   */
+   background-color: #46bc9922;
+   /* opacity: 0.5; */
 }
 
 .section-title {
@@ -918,11 +923,11 @@ section {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 80px;
+  width: 200px;
   height: 80px;
   margin-bottom: 20px;
   background: #fff;
-  border-radius: 50%;
+  border-radius: 20%;
   transition: 0.5s;
   color: #46bc99;
   overflow: hidden;
@@ -969,6 +974,7 @@ section {
 .services .description {
   line-height: 24px;
   font-size: 14px;
+  font-weight: 400;
 }
 
 /*--------------------------------------------------------------
@@ -1796,4 +1802,28 @@ section {
   padding-top: 10px;
   text-align: center;
   font-size: 13px;
+}
+
+.pt-sans-regular {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.pt-sans-bold {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.pt-sans-regular-italic {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.pt-sans-bold-italic {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 700;
+  font-style: italic;
 }
