@@ -621,7 +621,7 @@ section {
 .section-title h2 {
   font-size: 32px;
   font-weight: bold;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
@@ -631,11 +631,11 @@ section {
   content: "";
   position: absolute;
   display: block;
-  width: 50px;
+  width: 250px;
   height: 3px;
   background: #46bc99;
   bottom: 0;
-  left: calc(50% - 25px);
+  left: calc(50% - 125px);
 }
 
 .section-title p {
@@ -927,7 +927,7 @@ section {
   height: 80px;
   margin-bottom: 20px;
   background: #fff;
-  border-radius: 20%;
+  /* border-radius: 10%; */
   transition: 0.5s;
   color: #46bc99;
   overflow: hidden;
