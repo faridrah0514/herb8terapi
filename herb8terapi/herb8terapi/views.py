@@ -12,6 +12,14 @@ from .models import Registration
 def format_whatsapp_url(**values):
     wa_number = '6281299266009'
     formatted_text = f"""
+Halo herb8. Saya mau registrasi atas nama
+Nama: {values['full_name']},
+No. Tlp: {values['phone_number']},
+Diagnosa dokter: {values['diagnose']},
+Berikut detail dari registrasi saya
+PDF Link: https://herb8terapi.com/pdf/{values['rand_id']}
+"""
+    old_formatted_text = f"""
 Halo herb8.
 Nama: {values['full_name']},
 Jenis Kelamin: {values['gender']},

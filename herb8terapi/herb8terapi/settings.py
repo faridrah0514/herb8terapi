@@ -24,7 +24,7 @@ print(BASE_DIR)
 SECRET_KEY = 'django-insecure-1mb2!=h0m_r2n9qzic+)bwgy7nk9ohk2*dqs+8*0dwut%0y@)8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'faridsoftwareengineer.online',
