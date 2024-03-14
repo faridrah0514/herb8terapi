@@ -40,21 +40,25 @@
   {% include 'medicio/base/topbar.html' %}
   {% include 'medicio/base/header.html' %}
 
-  <section id="hero">
-    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
-      <div id="hero-carousel-indicators"></div>
-      <div class="carousel-inner" role="listbox">
-        <div class="carousel-item active" style="background-image: url('{% static 'assets/img/foto.jpg' %}')">
-          <div class="container">
+  <section id="hero" class="pb-0">
+    <img class="img-fluid"  style="width: 100%; padding-top: 80px;" src="{% static 'assets/img/foto.jpeg' %}">
+    <!-- <div>
+      <h1>Test123123123</h1>
+    </div> -->
+    <!-- <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel"> -->
+      <!-- <div id="hero-carousel-indicators"></div> -->
+      <!-- <div class="carousel-inner" role="listbox"> -->
+        <!-- <div class="carousel-item active" style="background-image: url('{% static 'assets/img/foto.jpeg' %}')"> -->
+          <!-- <div class="container">
             <h2><span>Pengobatan Tradisional Holistic</span></h2>
             <h2>TANPA OPERASI</h2>
             <p>
               Cara tepat dan aman pengobatan <strong>kanker, ginjal, komplikasi, diabetes, dan jantung, wasir</strong> tanpa operasi dan kemotherapy serta aman untuk <strong>liver, lambung, dan infeksi usus.</strong> Tanpa efek samping
               </p>
-          </div>
-        </div>
-      </div>
-    </div>
+          </div> -->
+        <!-- </div> -->
+      <!-- </div> -->
+    <!-- </div> -->
   </section><!-- End Hero -->
 
   <main id="main">
@@ -249,12 +253,16 @@
 
         <div class="gallery-slider swiper">
           <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'assets/img/gallery/gallery-4.jpg' %}"><img src="{% static 'assets/img/gallery/gallery-4.png' %}" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'assets/img/gallery/gallery-2.jpg' %}"><img src="{% static 'assets/img/gallery/gallery-2.png' %}" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'assets/img/gallery/gallery-1.jpg' %}"><img src="{% static 'assets/img/gallery/gallery-1.png' %}" class="img-fluid" alt=""></a></div>
-  
-            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'assets/img/gallery/gallery-3.jpg' %}"><img src="{% static 'assets/img/gallery/gallery-3.png' %}" class="img-fluid" alt=""></a></div>
-            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'assets/img/gallery/gallery-5.jpg' %}"><img src="{% static 'assets/img/gallery/gallery-5.png' %}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'assets/img/gallery/gallery-4.png' %}"><img src="{% static 'assets/img/gallery/gallery-4.png' %}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'assets/img/gallery/gallery-2.png' %}"><img src="{% static 'assets/img/gallery/gallery-2.png' %}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'assets/img/gallery/gallery-1.png' %}"><img src="{% static 'assets/img/gallery/gallery-1.png' %}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'assets/img/gallery/gallery-3.png' %}"><img src="{% static 'assets/img/gallery/gallery-3.png' %}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'assets/img/gallery/gallery-5.png' %}"><img src="{% static 'assets/img/gallery/gallery-5.png' %}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'assets/img/gallery/gallery-6.jpeg' %}"><img src="{% static 'assets/img/gallery/gallery-6.jpeg' %}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'assets/img/gallery/gallery-7.jpeg' %}"><img src="{% static 'assets/img/gallery/gallery-7.jpeg' %}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'assets/img/gallery/gallery-8.jpeg' %}"><img src="{% static 'assets/img/gallery/gallery-8.jpeg' %}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'assets/img/gallery/gallery-9.jpeg' %}"><img src="{% static 'assets/img/gallery/gallery-9.jpeg' %}" class="img-fluid" alt=""></a></div>
+            <div class="swiper-slide"><a class="gallery-lightbox" href="{% static 'assets/img/gallery/gallery-10.jpeg' %}"><img src="{% static 'assets/img/gallery/gallery-10.jpeg' %}" class="img-fluid" alt=""></a></div>
           </div>
           <div class="swiper-pagination"></div>
         </div>
